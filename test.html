@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Test</title>
+
+  <style>
+  
+  li{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    width: 30%;
+  }
+
+  </style>
+
+</head>
+  <body>
+
+    <form id="myForm">
+
+    
+
+    </form>
+
+    <ul id="myList" style="list-style: none;">
+      <li id = "temp"></li>
+    </ul>
+    
+    
+
+    <script src = https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js> </script>
+
+    <script>
+
+    var temp = '';
+
+    $.get('http://jsonplaceholder.typicode.com/users', function (response){
+
+  	  	for(var i = 0; i < response.length; i++){
+
+  	  		temp += '<li>' + "Name: " + response[i].name +"<br>"+ "Email: " + response[i].email + "<br>" + "Phone: " + response[i].phone + "<br>" +"Website: " + response[i].website + "<br>" + "Company: " + response[i].company.name + "<br>" + '</li>' + "<br>" + "<br>";
+
+  	  	}
+
+        document.getElementById("myList").innerHTML = temp;
+
+    	});
+
+    </script>
+
+  </body>
+</html>
